@@ -48,3 +48,25 @@ EOF
   }
 }
 
+
+###################################################
+
+###############################
+# IAM assumable role for admin
+###############################
+module "iam_assumable_role_admin" {
+  source = "../modules/iam-role-policy"
+  name             = "admin1185272022PM"
+  role_name        = "admin"
+  role_path        = "/"
+  role_description =  "for test purpose only"
+
+  attach_attaching_test_policy = true
+  attaching_test_role_policy_arn = module.iam-policy
+
+  tags = {
+    Role = "Admin"
+  }
+}
+
+

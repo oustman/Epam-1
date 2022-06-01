@@ -62,7 +62,7 @@ module "iam_assumable_role_admin" {
   role_description =  "for test purpose only"
 
   attach_attaching_test_policy = true
-  attaching_test_role_policy_arn = module.iam-policy
+  
 
   tags = {
     Role = "Admin"
